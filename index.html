@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinNova AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="theme-dark">
+    <div class="bg-animation">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+
+<h2 class="logo">⚡ FinNova</h2>
+
+<ul>
+<li class="menu active" onclick="showSection('dashboard',this)">Dashboard</li>
+<li class="menu" onclick="showSection('converter',this)">Converter</li>
+<li class="menu" onclick="showSection('history',this)">History</li>
+<li class="menu" onclick="showSection('favorites',this)">Favorites</li>
+<li class="menu" onclick="showSection('ai',this)">AI Assist</li>
+</ul>
+
+</div>
+
+<!-- Main -->
+<div class="main">
+
+<header>
+<div class="titleBox">
+
+<div class="iconWrap">
+<img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" class="robot">
+<i class="fa-solid fa-chart-line chartIcon"></i>
+</div>
+
+<h1>FinNova AI</h1>
+
+</div>
+</header>
+
+<!-- Dashboard -->
+<section id="dashboard" class="page">
+
+<div class="cards">
+<div class="card">USD/INR <span>83.42</span></div>
+<div class="card">EUR/USD <span>1.08</span></div>
+<div class="card">Gold <span>₹6850/g</span></div>
+</div>
+
+<div class="glass chartWrap">
+<canvas id="myChart"></canvas>
+</div>
+
+</section>
+
+<!-- Converter -->
+<section id="converter" class="page" style="display:none;">
+
+<div class="glass">
+
+<h2>🌍 Global Currency Converter</h2>
+
+<input type="number" id="amount" value="1" min="0">
+
+<div class="row">
+
+<div class="selectBox">
+<img id="fromFlag" alt="From Flag">
+<select id="from"></select>
+</div>
+
+<button type="button" id="swap">
+<i class="fa fa-right-left"></i>
+</button>
+
+<div class="selectBox">
+<img id="toFlag" alt="To Flag">
+<select id="to"></select>
+</div>
+
+</div>
+
+<button type="button" id="convert">Convert Now</button>
+
+<div id="result">1 USD = 83 INR</div>
+
+</div>
+
+</section>
+
+<!-- History -->
+<section id="history" class="page" style="display:none;">
+<div class="glass">
+<h2>📜 Conversion History</h2>
+<ul id="historyList"></ul>
+</div>
+</section>
+
+<!-- Favorites -->
+<section id="favorites" class="page" style="display:none;">
+<div class="glass">
+<h2>⭐ Favorites</h2>
+<div class="favItem">USD → INR</div>
+<div class="favItem">EUR → USD</div>
+<div class="favItem">GBP → INR</div>
+</div>
+</section>
+
+<!-- AI -->
+<section id="ai" class="page" style="display:none;">
+<div class="glass">
+
+<h2>🤖 AI Assist</h2>
+
+<div id="chatBox" class="chatBox"></div>
+
+<div class="chatRow">
+<input type="text" id="userInput" placeholder="Ask about finance, gold, USD, inflation...">
+<button type="button" id="sendBtn">Send</button>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<!-- Theme Button -->
+<button id="themeFab">
+<i class="fa fa-palette"></i>
+</button>
+
+<!-- Theme Panel -->
+<div id="themePanel">
+<button onclick="setTheme('dark')">Dark</button>
+<button onclick="setTheme('light')">Light</button>
+<button onclick="setTheme('neon')">Neon</button>
+<button onclick="setTheme('gold')">Gold</button>
+</div>
+
+<script src="codes.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
